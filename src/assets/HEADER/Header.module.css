@@ -1,0 +1,13 @@
+.navbar{
+    width: 100vw;
+    height: 5rem;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.head{
+    color: white;
+    font-size: 3rem;
+}
