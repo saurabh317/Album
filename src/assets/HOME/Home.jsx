@@ -5,7 +5,7 @@ import AddAlbum from "../../COMPONENTS/AddAlbum";
 import AlbumList from "../../COMPONENTS/AlbumList";
 
 const Home = () => {
-  const [ album, setAlbum ] = useState([]);
+  const [album, setAlbum] = useState([]);
   const fetchData = useCallback(async () => {
     try {
       const response = await fetch(
@@ -17,24 +17,22 @@ const Home = () => {
       console.error(error);
     }
   });
-  console.log( album);
+  console.log(album);
 
   useEffect(() => {
     fetchData();
   }, []);
 
-
-  const updateAlbum =(newData)=>{
-    setAlbum(prev => [...prev, newData])
-  }
+  const updateAlbum = (newData) => {
+    setAlbum((prev) => [...prev, newData]);
+  };
+  console.log("for checking purpose ", album);
 
   return (
     <div className={styles.home}>
-      <AddAlbum updateAlbum={updateAlbum}/>
-      <AlbumList album={album}/>
+      <AddAlbum updateAlbum={updateAlbum} />
+      <AlbumList album={album} setAlbum={setAlbum} />
     </div>
-
-
   );
 };
 
