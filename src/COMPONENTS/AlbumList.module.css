@@ -1,0 +1,10 @@
+.AddAlbumList{
+    margin-top: 2rem;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+
+}

@@ -12,22 +12,25 @@ const Home = () => {
         `https://jsonplaceholder.typicode.com/albums`
       );
       const data = await response.json();
-      console.log(data);
-
-
       setAlbum(data);
     } catch (error) {
       console.error(error);
     }
   });
+  console.log( album);
 
   useEffect(() => {
     fetchData();
   }, []);
 
+
+  const updateAlbum =(newData)=>{
+    setAlbum(prev => [...prev, newData])
+  }
+
   return (
     <div className={styles.home}>
-      <AddAlbum />
+      <AddAlbum updateAlbum={updateAlbum}/>
       <AlbumList album={album}/>
     </div>
 
